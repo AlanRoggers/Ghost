@@ -1,0 +1,34 @@
+{
+    "name": "OnreInput",
+    "maps": [
+        {
+            "name": "Normal",
+            "id": "acbc8e2e-9495-4338-927a-7aceed389615",
+            "actions": [
+                {
+                    "name": "Jump",
+                    "type": "Button",
+                    "id": "8a1f2729-9a16-4b35-ae20-9af31e5dce8b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "366efbd8-c3c9-4700-af3f-6975379dc7c5",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
