@@ -1,10 +1,15 @@
+using Unity.Mathematics;
 using UnityEngine;
-using UnityEngine.InputSystem;
-public class OnreActions : MonoBehaviour
+public class OnreActions
 {
-    public void Jump(InputAction.CallbackContext context)
+    public static void Jump()
     {
-        if (context.performed)
-            Debug.Log("Saltando");
+        Debug.Log("Saltando");
+    }
+
+    public static void Walk(float direction, Rigidbody2D physics)
+    {
+        if (Mathf.Abs(physics.velocity.x) < 10)
+            physics.AddForce(5 * direction * new Vector2(1, 0), ForceMode2D.Force);
     }
 }
