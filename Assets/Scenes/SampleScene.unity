@@ -484,9 +484,9 @@ GameObject:
   - component: {fileID: 2025609744}
   - component: {fileID: 2025609745}
   - component: {fileID: 2025609746}
-  - component: {fileID: 2025609747}
   - component: {fileID: 2025609748}
   - component: {fileID: 2025609749}
+  - component: {fileID: 2025609750}
   m_Layer: 0
   m_Name: Onre
   m_TagString: Untagged
@@ -595,7 +595,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Actions: {fileID: -944628639613478452, guid: 6cafd241c18cb85ea84ef8de9d384c09, type: 3}
-  m_NotificationBehavior: 2
+  m_NotificationBehavior: 3
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
     m_PersistentCalls:
@@ -644,30 +644,6 @@ MonoBehaviour:
   m_DefaultActionMap: Normal
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &2025609747
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2025609742}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e1aaad628b787447a3c9de60d3c2980, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  walkPressed: 0
-  phys: {fileID: 0}
-  playerInput: {fileID: 0}
-  walk:
-    m_Name: 
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
 --- !u!50 &2025609748
 Rigidbody2D:
   serializedVersion: 4
@@ -740,6 +716,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.55, y: 1.75}
   m_EdgeRadius: 0
+--- !u!114 &2025609750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2025609742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5bf4e9fb46bc6ceeb6d0915664a9007, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roof: {fileID: 1481071741}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
