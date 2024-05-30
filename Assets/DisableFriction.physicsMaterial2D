@@ -6,6 +6,6 @@ PhysicsMaterial2D:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: NormalFriction
-  friction: 11.5
+  m_Name: DisableFriction
+  friction: 10
   bounciness: 0

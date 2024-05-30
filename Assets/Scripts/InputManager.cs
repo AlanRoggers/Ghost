@@ -4,11 +4,11 @@ using UnityEngine.InputSystem;
 
 public class InputManager : MonoBehaviour
 {
-    public BoxCollider2D roof;
     private PlayerInput playerInput;
     private InputAction walk;
     private InputAction jump;
     private Rigidbody2D phys;
+    private Coroutine friction;
     private void Awake()
     {
         playerInput = GetComponent<PlayerInput>();
@@ -21,7 +21,7 @@ public class InputManager : MonoBehaviour
         playerInput.onActionTriggered += ManageActionTriggered;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         OnreActions.Walk(walk.ReadValue<float>(), phys);
     }
@@ -40,9 +40,14 @@ public class InputManager : MonoBehaviour
                 break;
             case "Walk":
                 if (context.action.phase.ToString() == "Started")
-                    StartCoroutine(OnrePhysics.DynamicFriction(roof.sharedMaterial));
-                else if (context.action.phase.ToString() == "Canceled")
-                    StartCoroutine(OnrePhysics.StaticFriction(roof.sharedMaterial));
+                    friction = StartCoroutine(OnrePhysics.Friction(phys, walk.ReadValue<float>()));
+
+                if (context.action.phase.ToString() == "Canceled")
+                {
+                    StopCoroutine(friction);
+                    if (walk.ReadValue<float>() == 0)
+                        StartCoroutine(OnrePhysics.StaticFriction(phys));
+                }
                 break;
             default:
                 Debug.Log("NoMatched");
